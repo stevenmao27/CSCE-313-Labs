@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 struct Point {
     int x, y;
@@ -19,7 +20,7 @@ class Shape {
     ~Shape () {
     }
 
-    void addPoints (/* formal parameter for unsized array called pts */) {
+    void addPoints (Point* pts) {
         for (int i = 0; i <= vertices; i++) {
             memcpy(points[i], &pts[i%vertices], sizeof(Point));
         }
@@ -30,12 +31,12 @@ class Shape {
         for (int i = 0; i <= vertices; i++) {
             // FIXME: there are two methods to access members of pointers
             //        use one to fix lhs and the other to fix rhs
-            int lhs = points[i].x * points[i+1].y;
-            int rhs = points[i+1].x * points[i].y;
+            int lhs = points[i]->x * points[i+1]->y;
+            int rhs = (*points)[i+1].x * (*points)[i].y;
             temp += (lhs - rhs);
         }
-        double area = abs(temp)/2.0;
-        return &area;
+        double* area = new double(abs(temp)/2.0);
+        return area;
     }
 };
 
