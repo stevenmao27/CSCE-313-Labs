@@ -9,8 +9,12 @@ struct Point {
 };
 
 class Shape {
+    private:
+
     int vertices;
     Point** points;
+
+    public: 
 
     Shape (int _vertices) {
         vertices = _vertices;
@@ -58,7 +62,7 @@ int main () {
     // adding points to tri
     Point triPts[3] = {tri1, tri2, tri3};
     Shape* tri = new Shape(3);
-    tri.addPoints(triPts);
+    tri->addPoints(triPts);
 
     // FIXME: create the following points using your preferred struct
     //        definition:
@@ -66,11 +70,15 @@ int main () {
     //          quad2 = (0, 2)
     //          quad3 = (2, 2)
     //          quad4 = (2, 0)
+    Point quad1 = Point(0, 0);
+    Point quad2 = Point(0, 2);
+    Point quad3 = Point(2, 2);
+    Point quad4 = Point(2, 0);
 
     // adding points to quad
     Point quadPts[4] = {quad1, quad2, quad3, quad4};
     Shape* quad = new Shape(4);
-    quad.addPoints(quadPts);
+    quad->addPoints(quadPts);
 
     // FIXME: print out area of tri and area of quad
 }
