@@ -29,8 +29,10 @@ class Shape {
     double* area () {
         int temp = 0;
         for (int i = 0; i <= vertices; i++) {
-            // FIXME: there are two methods to access members of pointers
-            //        use one to fix lhs and the other to fix rhs
+            // 2 ways to access member:
+            // - Use -> on pointers
+            // - Use . on dereferenced pointers
+
             int lhs = points[i]->x * points[i+1]->y;
             int rhs = (*points)[i+1].x * (*points)[i].y;
             temp += (lhs - rhs);
@@ -41,11 +43,17 @@ class Shape {
 };
 
 int main () {
-    // FIXME: create the following points using the three different methods
-    //        of defining structs:
-    //          tri1 = (0, 0)
-    //          tri2 = (1, 2)
-    //          tri3 = (2, 0)
+    // 3 ways to define struct:
+    // - Default Constructor
+    // - Constructor with Parameters
+    // - Copy Constructor
+
+    Point tri1 = Point();
+    tri1.x = 0;
+    tri1.y = 0;
+    Point tri2 = Point(1,2);
+    Point tri3 = tri1;
+    tri3.x = 2;
 
     // adding points to tri
     Point triPts[3] = {tri1, tri2, tri3};
