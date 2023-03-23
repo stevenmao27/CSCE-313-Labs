@@ -1,6 +1,6 @@
-Running parent process PID: 1818
+Running parent process PID: 2295
 
-Running child process PID: 1819
+Running child process PID: 2296
 Printing arguments
 argv[0]: echoall
 argv[1]: Bandicoot
@@ -10,7 +10,7 @@ Printing all env strings
 USER=Pikachu
 PATH=/tmp
 
-Running child process PID: 1820
+Running child process PID: 2297
 Printing arguments
 argv[0]: echoall
 argv[1]: Spyro
@@ -21,7 +21,7 @@ NVM_INC=/root/.nvm/versions/node/v18.13.0/include/node
 WSL2_GUI_APPS_ENABLED=1
 WSL_DISTRO_NAME=Ubuntu
 NAME=Stevens-Zephyrus-G14
-PWD=/mnt/c/Users/steve/OneDrive/Documents/Coding/SPRING2023/Computer System Repos/quiz-2-2
+PWD=/mnt/c/Users/steve/OneDrive/Documents/Coding/SPRING2023/Computer System Repos/CSCE-313-Labs
 LOGNAME=root
 HOME=/root
 LANG=C.UTF-8

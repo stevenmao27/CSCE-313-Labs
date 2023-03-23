@@ -18,8 +18,6 @@ int main(void)
         // Child 1
         printf("Running child process PID: %d\n", getpid());
         execle("./echoall", "echoall", "Bandicoot", "Pacman", NULL, custom_env);
-        perror("execle error");
-        exit(1);
     } else if (pid1 > 0) {
         // Parent
         waitpid(pid1, &status1, 0);
@@ -28,9 +26,8 @@ int main(void)
         if (pid2 == 0) {
             // Child 2
             printf("Running child process PID: %d\n", getpid());
+            //! This only works if the executable is in $PATH. If not, change first argument to "./echoall"
             execlp("echoall", "echoall", "Spyro", NULL);
-            perror("execlp error");
-            exit(1);
         } else if (pid2 > 0) {
             // Parent
             waitpid(pid2, &status2, 0);
@@ -43,5 +40,4 @@ int main(void)
         exit(1);
     }
     
-    exit(0);
 }
